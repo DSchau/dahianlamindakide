@@ -1,0 +1,17 @@
+# https://dahianlamindakide.ayriyazilir.com/
+
+basePath: https://github.com/ayriyazilir/dahianlamindakide/blob/master/assets/sass
+
+display:
+    access:
+        - public
+        - private
+    alias: false
+    watermark: true
+
+package: ./package.json
+
+theme: default
+
+groups:
+    undefined: General

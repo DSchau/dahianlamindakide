@@ -1,0 +1,17 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+/// Brand Color
+/// @access public
+/// @example
+///   color: brand-color(facebook);
+/// @param {String} brand - Brand name
+/// @return {String} [$white] Color
+/// @since 1.0.0
+@function brand-color($brand) {
+  @if map-has-key($brand-colors, $brand) {
+    @return map-get($brand-colors, $brand);
+  }
+
+  @warn "Unknown `#{$brand}` in $brand-colors.";
+  @return $white;
+}

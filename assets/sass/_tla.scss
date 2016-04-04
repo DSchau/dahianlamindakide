@@ -1,0 +1,22 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+.turkish-language-association {
+  color: $three-fourths-white;
+  margin: 0 auto;
+  text-align: justify;
+  width: 75%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  .turkish-language-association {
+    font-size: 10px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  .turkish-language-association {
+    font-size: 10px;
+    width: 100%;
+  }
+}

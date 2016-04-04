@@ -1,0 +1,30 @@
+/* https://dahianlamindakide.ayriyazilir.com/ */
+
+/* TEAM */
+  Gökay Gürcan
+    title   : Software Developer
+    website : https://www.gokaygurcan.com/
+    facebook: https://www.facebook.com/gokaygurcan
+    twitter : https://twitter.com/gokaygurcan
+    github  : https://github.com/gokaygurcan
+    linkedin: https://tr.linkedin.com/in/gokaygurcan
+    google+ : https://plus.google.com/+gokaygurcan
+
+
+/* THANKS */
+  jQuery Team (jQuery)
+  Bootstrap Team (Bootstrap)
+  Font Awesome Team (Font Awesome)
+  Alvaro Trigo (fullPage.js)
+  Vincent Garreau (particles.js)
+  Ellison Leão (sharer.js)
+  Ser Cappelle (design idea)
+
+
+/* SITE */
+  Site Name : Ayrı Yazılır
+  Site URL  : https://dahianlamindakide.ayriyazilir.com/
+  Standards : HTML5, CSS3.
+  Language  : Turkish
+  Software  : Webstorm 2016.1.1, Sketch (3.6.1), Git (2.5.4)
+  Components: jQuery, Bootstrap, fullPage.js, particles.js, sharer.js, Sass

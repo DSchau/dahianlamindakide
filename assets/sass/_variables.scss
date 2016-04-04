@@ -1,0 +1,144 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+/// Font
+/// @access public
+/// @example
+///   font-family: $font;
+/// @since 1.0.0
+/// @type Font
+/// @group Fonts
+$font: Helvetica, Arial, sans-serif;
+
+/// Black
+/// @access public
+/// @example
+///   color: $black;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$black: rgba(0, 0, 0, 1); // #000
+
+/// White
+/// @access public
+/// @example
+///   color: $white;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$white: rgba(255, 255, 255, 1); // #fff
+
+/// Primary
+/// @access public
+/// @example
+///   color: $primary;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$primary: rgba(100, 210, 255, 1); // #64d2ff
+
+/// Secondary
+/// @access public
+/// @example
+///   color: $secondary;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$secondary: rgba(245, 248, 250, .5);
+
+/// Menu
+/// @access public
+/// @example
+///   color: $menu;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$menu: rgba(46, 46, 44, .9);
+
+/// Selection
+/// @access public
+/// @example
+///   color: $selection;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$selection: rgba(127, 127, 127, .5);
+
+/// Border
+/// @access public
+/// @example
+///   color: $border;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$border: rgba(255, 255, 255, .1);
+
+/// Half White
+/// @access public
+/// @example
+///   color: $half-white;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$half-white: rgba(255, 255, 255, .5);
+
+/// Quarter White
+/// @access public
+/// @example
+///   color: $quarter-white;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$quarter-white: rgba(255, 255, 255, .25);
+
+/// Three-fourths White
+/// @access public
+/// @example
+///   color: $three-fourths-white;
+/// @since 1.0.0
+/// @type Color
+/// @group Colors
+$three-fourths-white: rgba(255, 255, 255, .75);
+
+/// Brand Colors
+/// @access public
+/// @example
+///   color: $brand-colors(facebook);
+/// @since 1.0.0
+/// @type Color
+/// @group Brands
+$brand-colors: (
+  facebook  : #3b5998,
+  googleplus: #dc4e41,
+  linkedin  : #0077b5,
+  pinterest : #bd081c,
+  tumblr    : #35465c,
+  twitter   : #55acee,
+  whatsapp  : #43d854
+);
+
+/// Logo (de)
+/// @access public
+/// @example
+///   background-image: $logo-de
+/// @since 1.0.0
+/// @type Image
+/// @group Logos
+$logo-de: url('../logo/de.png');
+
+/// Logo (ki)
+/// @access public
+/// @example
+///   background-image: $logo-ki
+/// @since 1.0.0
+/// @type Image
+/// @group Logos
+$logo-ki: url('../logo/ki.png');
+
+/// Logo (mi)
+/// @access public
+/// @example
+///   background-image: $logo-mi
+/// @since 1.0.0
+/// @type Image
+/// @group Logos
+$logo-mi: url('../logo/mi.png');

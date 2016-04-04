@@ -1,0 +1,34 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+.content {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+
+  .content-inner {
+    display: table-cell;
+    height: 100%;
+    padding: 100px 40px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    .content-inner {
+      padding: 75px 40px 100px;
+    }
+  }
+}
+
+// #anasayfa
+@import "homepage";
+
+// #tdk
+@import "tla";
+
+// #paylas
+@import "share";

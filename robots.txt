@@ -1,0 +1,4 @@
+# https://dahianlamindakide.ayriyazilir.com/
+
+User-agent: *
+Disallow:

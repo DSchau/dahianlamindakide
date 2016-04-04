@@ -1,0 +1,91 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+.share {
+  font-size: 90px;
+  word-spacing: 25px;
+
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $secondary;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .fa-facebook:hover,
+    .fa-facebook:focus,
+    .fa-facebook:active {
+      color: brand-color(facebook);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-twitter:hover,
+    .fa-twitter:focus,
+    .fa-twitter:active {
+      color: brand-color(twitter);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-google-plus:hover,
+    .fa-google-plus:focus,
+    .fa-google-plus:active {
+      color: brand-color(googleplus);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-linkedin:hover,
+    .fa-linkedin:focus,
+    .fa-linkedin:active {
+      color: brand-color(linkedin);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-pinterest:hover,
+    .fa-pinterest:focus,
+    .fa-pinterest:active {
+      color: brand-color(pinterest);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-tumblr:hover,
+    .fa-tumblr:focus,
+    .fa-tumblr:active {
+      color: brand-color(tumblr);
+      text-shadow: 0 0 10px $half-white;
+    }
+
+    .fa-whatsapp:hover,
+    .fa-whatsapp:focus,
+    .fa-whatsapp:active {
+      color: brand-color(whatsapp);
+      text-shadow: 0 0 10px $half-white;
+    }
+  }
+
+  .whatsapp {
+    display: none;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .whatsapp {
+      display: inline;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .share {
+    font-size: 50px;
+    word-spacing: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .share {
+    font-size: 60px;
+  }
+}
+

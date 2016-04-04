@@ -1,0 +1,36 @@
+{
+  "name": "ayriyazilir-dahianlamindakide",
+  "version": "1.0.0",
+  "description": "http://dahianlamindakide.ayriyazilir.com/ kaynak kodları",
+  "homepage": "https://dahianlamindakide.ayriyazilir.com/",
+  "private": true,
+  "authors": [
+    {
+      "name": "Gökay Gürcan",
+      "email": "info@gokaygurcan.com",
+      "url": "https://www.gokaygurcan.com/"
+    }
+  ],
+  "copyright": "2015",
+  "license": "GPL-3.0",
+  "keywords": [
+    "turkish",
+    "spelling",
+    "rules"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "fullpage.js": "^2.7.8",
+    "particles.js": "^2.0.0",
+    "sharer.js": "^0.2.15"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "globals": {
+    "$": false,
+    "jQuery": true,
+    "particlesJS": true,
+    "Feature": true,
+    "Scenario": true,
+    "actor": true
+  },
+  "indent": 2,
+  "latedef": true,
+  "maxlen": 120,
+  "quotmark": "single",
+  "strict": true,
+  "undef": true,
+  "unused": true,
+
+  "eqnull": true,
+  "esnext": true,
+
+  "browser": true,
+  "node": true
+}

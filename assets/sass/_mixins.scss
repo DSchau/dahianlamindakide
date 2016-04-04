@@ -1,0 +1,30 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+/// rgba
+/// @access public
+/// @example
+///   @include rgba("color", #000, #fff);
+/// @param {String} $attribute [color] - Attribute
+/// @param {Color} $color [#000000] - Color
+/// @param {Color} $background [#ffffff] - Background
+/// @since 1.0.0
+@mixin rgba($attribute: "color", $color: #000, $background: #fff) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+/// Animation
+/// @access public
+/// @example
+///   @include animation(bounce 4s 2s infinite);
+/// @param {String} $animation - Animation
+/// @since 1.0.0
+@mixin animation($animation...) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}

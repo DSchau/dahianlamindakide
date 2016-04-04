@@ -1,0 +1,93 @@
+// https://dahianlamindakide.ayriyazilir.com/
+
+#toggle {
+  cursor: pointer;
+  float: right;
+  margin: 25px 0;
+  position: relative;
+  width: 25px;
+  z-index: 2;
+
+  div {
+    backface-visibility: hidden;
+    background: white;
+    height: 2px;
+    margin: 7px auto;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  &.on {
+    .one {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .two {
+      opacity: 0;
+    }
+
+    .three {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+  }
+}
+
+#menu {
+  background: $menu;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  padding: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul,
+  li,
+  li a {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  li {
+    a {
+      color: $quarter-white;
+      display: inline-block;
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      padding: 15px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+
+  .active {
+    a {
+      color: $white;
+      position: relative;
+    }
+  }
+}
