@@ -1,6 +1,6 @@
 {
   "name": "@ayriyazilir/dahianlamindakide",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Dahi anlamındaki de ayrı yazılır.",
   "title": "Ayrı Yazılır",
   "abbreviation": "de",
@@ -24,33 +24,39 @@
   },
   "scripts": {
     "start": "http-server -p 6869 ./",
-    "test": "./node_modules/.bin/codeceptjs run"
+    "test": "npm run test-chrome && npm run test-firefox",
+    "test-chrome": "./node_modules/.bin/codeceptjs run --steps --profile chrome --reporter mochawesome",
+    "test-firefox": "./node_modules/.bin/codeceptjs run --steps --profile firefox --reporter mochawesome"
   },
   "keywords": [
     "turkish",
     "spelling",
     "rules"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
   "devDependencies": {
-    "bower": "^1.7.7",
-    "browser-sync": "^2.11.2",
-    "codeceptjs": "^0.4.6",
+    "bower": "^1.7.9",
+    "browser-sync": "^2.17.2",
+    "codeceptjs": "^0.4.7",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-csslint": "^0.3.0",
-    "gulp-cssnano": "^2.1.1",
-    "gulp-jshint": "^2.0.0",
+    "gulp-csslint": "^1.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jshint": "^2.0.1",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-sizereport": "^1.1.3",
-    "gulp-uglify": "^1.5.3",
-    "gulp-wrap": "^0.11.0",
-    "jshint": "^2.9.1",
-    "jshint-stylish": "^2.1.0",
-    "lodash": "^4.6.1",
-    "run-sequence": "^1.1.5",
-    "sassdoc": "^2.1.20"
+    "gulp-sass": "^2.3.2",
+    "gulp-sizereport": "^1.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-wrap": "^0.13.0",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "lodash": "^4.16.4",
+    "mochawesome": "^1.5.3",
+    "run-sequence": "^1.2.2",
+    "sassdoc": "^2.1.20",
+    "webdriverio": "^4.2.16"
   }
 }

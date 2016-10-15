@@ -1,0 +1,68 @@
+# https://dahianlamindakide.ayriyazilir.com/
+
+language: node_js
+node_js:
+  - '4' # LTS
+  - '6' # Latest
+
+sudo: required
+dist: trusty
+
+env:
+  - NODE_ENV=development
+
+before_install:
+  # Install libnotify-bin
+  - sudo apt-get -qq update 
+  - sudo apt-get install -y libnotify-bin # gulp-notify
+  - sudo apt-get install -y nmap
+
+  # Install global npm packages
+  - npm install -g npm
+  - npm install -g bower
+  - npm install -g codeceptjs
+  - npm install -g gulp
+  - npm install -g http-server
+  - npm install -g webdriverio
+
+  # Install local npm packages
+  - npm install
+  - npm link webdriverio
+
+  # Install Selenium Server
+  - wget -q https://selenium-release.storage.googleapis.com/3.0-beta4/selenium-server-standalone-3.0.0-beta4.jar
+
+  # Save initial location
+  - export INITIAL_LOCATION=$(pwd)
+  - echo $INITIAL_LOCATION
+
+  # Install Gecko Driver && Chrome Driver
+  - mkdir -p ~/drivers
+  - cd ~/drivers
+  - export PATH=~/drivers:$PATH
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
+  - tar xz -C ~/drivers -f geckodriver-v0.10.0-linux64.tar.gz
+  - chmod 777 ~/drivers/geckodriver
+  - ~/drivers/geckodriver --version
+  - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip chromedriver -d ~/drivers
+  - chmod 777 ~/drivers/chromedriver
+  - ~/drivers/chromedriver --version
+
+  # Go back to the initial location
+  - cd $INITIAL_LOCATION
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 1
+  - "java -jar selenium-server-standalone-3.0.0-beta4.jar -port 4444 >/dev/null 2>&1 &"
+  - sleep 5
+  - nmap -p 4444 127.0.0.1
+  - "npm start >/dev/null 2>&1 &"
+  - sleep 3
+  - nmap -p 6869 127.0.0.1
+
+script: 
+  # There's a known problem in the latest versions of Firefox, that's why Firefox tests are disabled.
+  - npm run test-chrome

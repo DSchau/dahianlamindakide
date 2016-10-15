@@ -11,10 +11,10 @@ body, html {
   background: #64d2ff;
   color: rgba(245, 248, 250, 0.5);
   display: table;
-  letter-spacing: 2px;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   height: 100%;
+  letter-spacing: 2px;
   line-height: 1.5;
   margin: 0;
   overflow: hidden;
@@ -149,8 +149,8 @@ body {
   font-weight: 100;
   left: 50%;
   line-height: 1.25;
-  max-width: 700px;
   margin: auto;
+  max-width: 700px;
   padding: 0;
   position: absolute;
   top: 50%;
@@ -248,10 +248,18 @@ body {
     .share .whatsapp {
       display: inline; } }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   .share {
-    font-size: 50px;
+    font-size: 40px;
     word-spacing: 50px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  .share {
+    font-size: 40px;
+    margin-top: 50px;
+    word-spacing: 50px; }
+    .share a {
+      display: block; } }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .share {

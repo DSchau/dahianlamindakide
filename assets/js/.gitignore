@@ -2,6 +2,7 @@
 
 # vendor:js
 bootstrap.min.js
+instantclick.js
 jquery.easings.min.js
 jquery.fullpage.min.js
 jquery.fullpage.min.js.map

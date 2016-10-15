@@ -30,7 +30,7 @@
       transform: rotate(-45deg) translate(7px, -8px);
     }
   }
-}
+} // #toggle
 
 #menu {
   background: $menu;
@@ -82,7 +82,7 @@
         color: $white;
       }
     }
-  }
+  } // li
 
   .active {
     a {
@@ -90,4 +90,4 @@
       position: relative;
     }
   }
-}
+} // #menu

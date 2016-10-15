@@ -63,7 +63,7 @@
       color: brand-color(whatsapp);
       text-shadow: 0 0 10px $half-white;
     }
-  }
+  } // a
 
   .whatsapp {
     display: none;
@@ -74,12 +74,24 @@
       display: inline;
     }
   }
+} // .share
+
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  .share {
+    font-size: 40px;
+    word-spacing: 50px;
+  }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   .share {
-    font-size: 50px;
+    font-size: 40px;
+    margin-top: 50px;
     word-spacing: 50px;
+
+    a {
+      display: block;
+    }
   }
 }
 
@@ -88,4 +100,3 @@
     font-size: 60px;
   }
 }
-

@@ -114,6 +114,17 @@ $(function() {
       }
     };
 
+    this.initInstantClick = function() {
+      if (typeof InstantClick !== 'undefined') {
+        InstantClick.init();
+
+        console.log('%cOK: initInstantClick()', 'color: color: #4f8a10; background-color: #dff2bf;');
+      }
+      else {
+        console.log('%cError: initInstantClick()', 'color: #d8000c; background-color: #ffbaba;');
+      }
+    };
+
     this.init = function() {
 
       console.log('%cDahi anlamındaki de ayrı yazılır.', 'font-size: x-large; color: #64d2ff;');
@@ -122,6 +133,7 @@ $(function() {
       this.initFullpage();
       this.initMenu();
       this.initAnalytics();
+      this.initInstantClick();
     };
   };
 

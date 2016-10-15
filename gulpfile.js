@@ -3,27 +3,27 @@
 'use strict';
 
 // node_modules
-var _            = require('lodash');
-var gulp         = require('gulp');
-var concat       = require('gulp-concat');
-var csslint      = require('gulp-csslint');
-var cssnano      = require('gulp-cssnano');
-var jshint       = require('gulp-jshint');
-var notify       = require('gulp-notify');
-var rename       = require('gulp-rename');
-var sass         = require('gulp-sass');
-var sizereport   = require('gulp-sizereport');
-var uglify       = require('gulp-uglify');
-var wrap         = require('gulp-wrap');
-var browser_sync = require('browser-sync');
-var sequence     = require('run-sequence');
-var sassdoc      = require('sassdoc');
+const _            = require('lodash');
+const gulp         = require('gulp');
+const concat       = require('gulp-concat');
+const csslint      = require('gulp-csslint');
+const cssnano      = require('gulp-cssnano');
+const jshint       = require('gulp-jshint');
+const notify       = require('gulp-notify');
+const rename       = require('gulp-rename');
+const sass         = require('gulp-sass');
+const sizereport   = require('gulp-sizereport');
+const uglify       = require('gulp-uglify');
+const wrap         = require('gulp-wrap');
+const browser_sync = require('browser-sync');
+const sequence     = require('run-sequence');
+const sassdoc      = require('sassdoc');
 
 // local modules
-var pkg = require('./package.json');
+let pkg = require('./package.json');
 
 // variables
-var assets       = {
+let assets       = {
   css  : './assets/css/',
   fonts: './assets/fonts/',
   img  : './assets/img/',
@@ -31,18 +31,18 @@ var assets       = {
   logo : './assets/logo/',
   sass : './assets/sass/'
 };
-var notification = {
+let notification = {
   title  : pkg.title,
   message: pkg.homepage,
   icon   : __dirname + '/assets/logo/' + pkg.abbreviation + '.png',
   onLast : true,
   wait   : true
 };
-var browserSync  = browser_sync.create(pkg.title);
-var reload       = browserSync.reload;
+let browserSync  = browser_sync.create(pkg.title);
+let reload       = browserSync.reload;
 
 // tasks
-gulp.task('default', function(done) {
+gulp.task('default', (done) => {
   sequence(
     'js',
     'sass',
@@ -52,7 +52,7 @@ gulp.task('default', function(done) {
   );
 });
 
-gulp.task('dev', function(done) {
+gulp.task('dev', (done) => {
   sequence(
     'js',
     'sass',
@@ -61,7 +61,7 @@ gulp.task('dev', function(done) {
   );
 });
 
-gulp.task('publish', function(done) {
+gulp.task('publish', (done) => {
   sequence(
     'js',
     'sass',
@@ -72,7 +72,7 @@ gulp.task('publish', function(done) {
 });
 
 // vendor
-gulp.task('vendor:js', function() {
+gulp.task('vendor:js', () => {
   return gulp
     .src([
       './bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -81,6 +81,8 @@ gulp.task('vendor:js', function() {
       './bower_components/fullpage.js/dist/jquery.fullpage.min.js.map',
       './bower_components/fullpage.js/vendors/jquery.easings.min.js',
       './bower_components/fullpage.js/vendors/jquery.slimscroll.min.js',
+
+      './bower_components/instantclick/instantclick.js',
 
       './bower_components/jquery/dist/jquery.min.js',
       './bower_components/jquery/dist/jquery.min.map',
@@ -98,7 +100,7 @@ gulp.task('vendor:js', function() {
     })));
 });
 
-gulp.task('vendor:css', function() {
+gulp.task('vendor:css', () => {
   return gulp
     .src([
       './bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -118,7 +120,7 @@ gulp.task('vendor:css', function() {
     })));
 });
 
-gulp.task('vendor:font', function() {
+gulp.task('vendor:font', () => {
   return gulp
     .src([
       './bower_components/font-awesome/fonts/FontAwesome.otf',
@@ -137,7 +139,7 @@ gulp.task('vendor:font', function() {
     })));
 });
 
-gulp.task('vendor', function(done) {
+gulp.task('vendor', (done) => {
   sequence(
     'vendor:js',
     'vendor:css',
@@ -147,21 +149,21 @@ gulp.task('vendor', function(done) {
 });
 
 // javascript
-gulp.task('jshint', function() {
+gulp.task('jshint', () => {
   return gulp
     .src([
       assets.js + '**/*.js',
-      '!' + assets.js + '**/*.min.js'
+      '!' + assets.js + '**/*.min.js',
+      '!' + assets.js + 'instantclick.js'
     ])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
-    //.pipe(jshint.reporter('fail'))
     .pipe(notify(_.extend(notification, {
       message: 'jshint'
     })));
 });
 
-gulp.task('uglify', function() {
+gulp.task('uglify', () => {
   return gulp
     .src(assets.js + 'app.js')
     .pipe(uglify())
@@ -178,7 +180,7 @@ gulp.task('uglify', function() {
     })));
 });
 
-gulp.task('js', function(done) {
+gulp.task('js', (done) => {
   sequence(
     'jshint',
     'uglify',
@@ -186,14 +188,14 @@ gulp.task('js', function(done) {
   );
 });
 
-gulp.task('js:watch', function() {
+gulp.task('js:watch', () => {
   gulp.watch(assets.js + '**/*.js', [
     'js'
   ]);
 });
 
 // sass
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return gulp
     .src([
       assets.sass + '**/*.{scss,sass}'
@@ -205,13 +207,13 @@ gulp.task('sass', function() {
     })));
 });
 
-gulp.task('sass:watch', function() {
+gulp.task('sass:watch', () => {
   gulp.watch(assets.sass + '**/*.{scss,sass}', [
     'sass'
   ]);
 });
 
-gulp.task('sassdoc', function() {
+gulp.task('sassdoc', () => {
   return gulp
     .src([
       assets.sass + '**/*.{scss,sass}'
@@ -223,21 +225,20 @@ gulp.task('sassdoc', function() {
 });
 
 // css
-gulp.task('csslint', function() {
+gulp.task('csslint', () => {
   return gulp
     .src([
       assets.css + 'style.css',
       '!' + assets.css + 'style.min.css'
     ])
     .pipe(csslint('.csslintrc'))
-    .pipe(csslint.reporter('compact'))
-    //.pipe(csslint.reporter('fail'))
+    .pipe(csslint.formatter('compact'))
     .pipe(notify(_.extend(notification, {
       message: 'csslint'
     })));
 });
 
-gulp.task('cssnano', function() {
+gulp.task('cssnano', () => {
   return gulp
     .src(assets.css + 'style.css')
     .pipe(cssnano())
@@ -254,7 +255,7 @@ gulp.task('cssnano', function() {
     })));
 });
 
-gulp.task('css', function(done) {
+gulp.task('css', (done) => {
   sequence(
     'csslint',
     'cssnano',
@@ -262,7 +263,7 @@ gulp.task('css', function(done) {
   );
 });
 
-gulp.task('css:watch', function() {
+gulp.task('css:watch', () => {
   gulp.watch(assets.css + 'style.css', [
     'css'
   ]);

@@ -4,6 +4,8 @@
   "globals": {
     "$": false,
     "jQuery": true,
+    "analytics": true,
+    "InstantClick": true,
     "particlesJS": true,
     "Feature": true,
     "Scenario": true,
