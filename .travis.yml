@@ -8,12 +8,22 @@ node_js:
 sudo: required
 dist: trusty
 
+git:
+  depth: 1
+
+addons:
+  hosts:
+  - dahianlamindakide.ayriyazilir.com
+
 env:
   - NODE_ENV=development
 
 before_install:
-  # Install libnotify-bin
-  - sudo apt-get -qq update 
+  # Install apt packages
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get -qq update
+  - sudo apt-get install -y google-chrome-stable
   - sudo apt-get install -y libnotify-bin # gulp-notify
   - sudo apt-get install -y nmap
 
@@ -23,46 +33,32 @@ before_install:
   - npm install -g codeceptjs
   - npm install -g gulp
   - npm install -g http-server
-  - npm install -g webdriverio
+  - npm install -g webdriverio && npm link webdriverio
 
-  # Install local npm packages
-  - npm install
-  - npm link webdriverio
+  # Install Linuxbrew
+  - echo -ne '\n' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  - PATH="$HOME/.linuxbrew/bin:$PATH"
+  - echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.bash_profile
+  - source ~/.bash_profile
+  - brew update && brew upgrade
 
-  # Install Selenium Server
-  - wget -q https://selenium-release.storage.googleapis.com/3.0-beta4/selenium-server-standalone-3.0.0-beta4.jar
-
-  # Save initial location
-  - export INITIAL_LOCATION=$(pwd)
-  - echo $INITIAL_LOCATION
-
-  # Install Gecko Driver && Chrome Driver
-  - mkdir -p ~/drivers
-  - cd ~/drivers
-  - export PATH=~/drivers:$PATH
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
-  - tar xz -C ~/drivers -f geckodriver-v0.10.0-linux64.tar.gz
-  - chmod 777 ~/drivers/geckodriver
-  - ~/drivers/geckodriver --version
-  - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip chromedriver -d ~/drivers
-  - chmod 777 ~/drivers/chromedriver
-  - ~/drivers/chromedriver --version
-
-  # Go back to the initial location
-  - cd $INITIAL_LOCATION
+  # Install Selenium server and browser drivers
+  - brew install selenium-server-standalone
+  - brew install chromedriver && chromedriver --version
+  # - brew install geckodriver && geckodriver --version
 
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - sleep 1
-  - "java -jar selenium-server-standalone-3.0.1.jar -port 4444 >/dev/null 2>&1 &"
+  - sleep 3
+  - "selenium-server -port 4444 >/dev/null 2>&1 &"
   - sleep 5
   - nmap -p 4444 127.0.0.1
   - "npm start >/dev/null 2>&1 &"
-  - sleep 3
+  - sleep 5
   - nmap -p 6869 127.0.0.1
+  - bower install
+  - gulp publish
 
-script: 
-  # There's a known problem in the latest versions of Firefox, that's why Firefox tests are disabled.
+script:
   - npm run test-chrome

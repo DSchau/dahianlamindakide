@@ -37,26 +37,26 @@
     "http-server": "^0.9.0"
   },
   "devDependencies": {
-    "bower": "^1.7.9",
-    "browser-sync": "^2.17.2",
-    "codeceptjs": "^0.4.7",
+    "bower": "^1.8.0",
+    "browser-sync": "^2.17.6",
+    "codeceptjs": "^0.4.9",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.1",
     "gulp-csslint": "^1.0.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-jshint": "^2.0.1",
+    "gulp-jshint": "^2.0.4",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sizereport": "^1.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-wrap": "^0.13.0",
-    "jshint": "^2.9.3",
+    "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
-    "lodash": "^4.16.4",
+    "lodash": "^4.17.0",
     "mochawesome": "^1.5.3",
     "run-sequence": "^1.2.2",
     "sassdoc": "^2.1.20",
-    "webdriverio": "^4.2.16"
+    "webdriverio": "^4.4.0"
   }
 }
