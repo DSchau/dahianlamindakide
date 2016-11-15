@@ -30,7 +30,7 @@ before_install:
   - npm link webdriverio
 
   # Install Selenium Server
-  - wget -q https://selenium-release.storage.googleapis.com/3.0-beta4/selenium-server-standalone-3.0.0-beta4.jar
+  - wget -q https://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
 
   # Save initial location
   - export INITIAL_LOCATION=$(pwd)
@@ -40,11 +40,11 @@ before_install:
   - mkdir -p ~/drivers
   - cd ~/drivers
   - export PATH=~/drivers:$PATH
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.10.0/geckodriver-v0.10.0-linux64.tar.gz
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
   - tar xz -C ~/drivers -f geckodriver-v0.10.0-linux64.tar.gz
   - chmod 777 ~/drivers/geckodriver
   - ~/drivers/geckodriver --version
-  - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+  - wget http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip chromedriver -d ~/drivers
   - chmod 777 ~/drivers/chromedriver
   - ~/drivers/chromedriver --version
