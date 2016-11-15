@@ -21,6 +21,7 @@ env:
 before_install:
   # Install apt packages
   - sudo apt-get -qq update 
+  - sudo apt-get install -y chromium-browser
   - sudo apt-get install -y libnotify-bin # gulp-notify
   - sudo apt-get install -y nmap
 
@@ -45,8 +46,8 @@ before_install:
 
   # Install Selenium server and browser drivers
   - brew install selenium-server-standalone
-  - brew install chromedriver
-  # - brew install geckodriver 
+  - brew install chromedriver && chromedriver --version
+  # - brew install geckodriver && geckodriver --version
 
 before_script:
   - export DISPLAY=:99.0
