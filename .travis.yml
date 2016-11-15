@@ -20,8 +20,10 @@ env:
 
 before_install:
   # Install apt packages
-  - sudo apt-get -qq update 
-  - sudo apt-get install -y chromium-browser
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get -qq update
+  - sudo apt-get install -y google-chrome-stable
   - sudo apt-get install -y libnotify-bin # gulp-notify
   - sudo apt-get install -y nmap
 
@@ -38,7 +40,7 @@ before_install:
   - npm link webdriverio
 
   # Install Linuxbrew
-  - echo -ne '\n' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)" 
+  - echo -ne '\n' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   - PATH="$HOME/.linuxbrew/bin:$PATH"
   - echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >> ~/.bash_profile
   - source ~/.bash_profile
