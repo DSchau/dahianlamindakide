@@ -33,11 +33,7 @@ before_install:
   - npm install -g codeceptjs
   - npm install -g gulp
   - npm install -g http-server
-  - npm install -g webdriverio
-
-  # Install local npm packages
-  - npm install
-  - npm link webdriverio
+  - npm install -g webdriverio && npm link webdriverio
 
   # Install Linuxbrew
   - echo -ne '\n' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
@@ -61,6 +57,8 @@ before_script:
   - "npm start >/dev/null 2>&1 &"
   - sleep 5
   - nmap -p 6869 127.0.0.1
+  - bower install
+  - gulp publish
 
 script:
   - npm run test-chrome
