@@ -57,6 +57,6 @@
     "mochawesome": "^1.5.4",
     "run-sequence": "^1.2.2",
     "sassdoc": "^2.1.20",
-    "webdriverio": "^4.5.0"
+    "webdriverio": "^4.5.1"
   }
 }
