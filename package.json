@@ -53,7 +53,7 @@
     "gulp-wrap": "^0.13.0",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
-    "lodash": "^4.17.3",
+    "lodash": "^4.17.4",
     "mochawesome": "^1.5.4",
     "run-sequence": "^1.2.2",
     "sassdoc": "^2.1.20",
