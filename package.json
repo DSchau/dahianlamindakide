@@ -51,7 +51,7 @@
     "gulp-sizereport": "^1.2.0",
     "gulp-uglify": "^2.1.1",
     "gulp-wrap": "^0.13.0",
-    "jshint": "^2.9.4",
+    "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
     "lodash": "^4.17.4",
     "mochawesome": "^1.5.5",
