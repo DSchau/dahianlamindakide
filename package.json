@@ -55,7 +55,7 @@
     "jshint-stylish": "^2.2.1",
     "lodash": "^4.17.4",
     "mochawesome": "^1.5.5",
-    "run-sequence": "^1.2.2",
+    "run-sequence": "^2.2.0",
     "sassdoc": "^2.2.1",
     "webdriverio": "^4.6.2"
   }
