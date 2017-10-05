@@ -26,12 +26,15 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.1",
+    "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
-    "fullpage.js": "^2.8.6",
+    "font-awesome": "^4.7.0",
+    "fullpage.js": "^2.9.4",
     "particles.js": "^2.0.0",
-    "sharer.js": "^0.2.16",
+    "sharer.js": "^0.3.2",
     "instantclick": "^3.1.0"
+  },
+  "resolutions": {
+    "sharer.js": "^0.3.2"
   }
 }

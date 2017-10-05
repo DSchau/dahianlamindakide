@@ -23,6 +23,8 @@
     "url": "https://github.com/ayriyazilir/dahianlamindakide/issues"
   },
   "scripts": {
+    "build": "gulp",
+    "prestart": "npm run build",
     "start": "http-server -p 6869 ./",
     "test": "npm run test-chrome && npm run test-firefox",
     "test-chrome": "./node_modules/.bin/codeceptjs run --steps --profile chrome --reporter mochawesome",
@@ -33,30 +35,29 @@
     "spelling",
     "rules"
   ],
-  "dependencies": {
-    "http-server": "^0.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "bower": "^1.8.0",
-    "browser-sync": "^2.18.8",
-    "codeceptjs": "^0.5.1",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-csslint": "^1.0.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-jshint": "^2.0.4",
-    "gulp-notify": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sizereport": "^1.2.0",
-    "gulp-uglify": "^2.1.1",
-    "gulp-wrap": "^0.13.0",
-    "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1",
-    "lodash": "^4.17.4",
-    "mochawesome": "^1.5.5",
-    "run-sequence": "^1.2.2",
-    "sassdoc": "^2.2.1",
-    "webdriverio": "^4.6.2"
+    "bower": "~1.8.0",
+    "browser-sync": "~2.18.8",
+    "codeceptjs": "~1.0.3",
+    "gulp": "~3.9.1",
+    "gulp-concat": "~2.6.1",
+    "gulp-csslint": "~1.0.0",
+    "gulp-cssnano": "~2.1.2",
+    "gulp-jshint": "~2.0.4",
+    "gulp-notify": "~3.0.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "~3.1.0",
+    "gulp-sizereport": "~1.2.0",
+    "gulp-uglify": "~3.0.0",
+    "gulp-wrap": "~0.13.0",
+    "http-server": "~0.10.0",
+    "jshint": "~2.9.4",
+    "jshint-stylish": "~2.2.1",
+    "lodash": "~4.17.4",
+    "mochawesome": "~2.3.1",
+    "run-sequence": "~2.2.0",
+    "sassdoc": "~2.3.0",
+    "webdriverio": "~4.8.0"
   }
 }
